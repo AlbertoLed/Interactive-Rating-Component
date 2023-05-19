@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap');
+/* 
+    \\RESET 
+*/
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 0;
+}
+
+/*
+    \\VARIABLES 
+*/
+:root {
+    --BGCOLOR: hsl(216, 12%, 8%);
+    --ORANGE-HIGHLIGHT: hsl(25, 97%, 53%);
+    --WHITE-HIGHLIGHT: hsl(0, 0%, 100%);
+    --FONT-COLOR: hsl(217, 12%, 63%);
+    --SELECTED-STATE-COLOR: hsl(216, 12%, 54%);
+    --CARD-COLOR: hsl(213, 19%, 18%);
+    --CARD-COLOR-DARKER: hsl(214, 26%, 12%);
+    
+
+    --CIRCLE-DIAMETER: 40px;
+}
+
+/* 
+    \\GENERAL STYLES
+*/
+html {
+    font-family: 'Overpass', sans-serif;
+    font-size: 16px;
+}
+body{
+    background-color: var(--BGCOLOR); 
+    
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+h1 {
+    color: var(--WHITE-HIGHLIGHT);
+}
+p {
+    color: var(--FONT-COLOR);
+}
+/*
+    \\STANDALONE RULES
+*/
+.hidden {
+    display: none;
+}
+.color-white {
+    color: var(--WHITE-HIGHLIGHT);
+}
+
+/*  
+    \\ELEMENTS
+*/
+.card {
+    height: 360px;
+    width: 330px;
+    background: radial-gradient(
+        circle at top,
+        var(--CARD-COLOR), 
+        var(--CARD-COLOR-DARKER) 90%);
+    border-radius: 15px;
+}
+
+/* \CARD RATING */
+.card--rating {
+    padding: 25px;
+    display: grid;
+    align-content: space-between;
+}
+/* -Star icon*/
+.card--rating__icon {
+    background-color: var(--CARD-COLOR);
+    width: var(--CIRCLE-DIAMETER);
+    height: var(--CIRCLE-DIAMETER);
+    padding: 12.5px;
+    border-radius: 50%;
+}
+/* Paragraph*/
+.card--rating__paragraph {
+    font-size: .885rem;
+    line-height: 1.5rem;    
+}
+
+/* -Form */
+.card--rating__options {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 25px;
+    margin-top: 10px;
+}
+.card--rating__option {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    grid-template-areas:
+        'one two three four five';
+}
+.card--rating__label {
+    z-index: 1;
+    color: var(--FONT-COLOR);
+    text-align: center;
+    border-radius: 50%;
+    padding-top: calc(50% - .44rem);
+    font-size: .88rem;
+}
+.card--rating__label:hover {
+    color: var(--WHITE-HIGHLIGHT);
+    cursor:pointer;
+}
+.card--rating__label--1, .card--rating__input--1 {
+    grid-area: one;
+}
+.card--rating__label--2, .card--rating__input--2 {
+    grid-area: two;
+}
+.card--rating__label--3, .card--rating__input--3 {
+    grid-area: three;
+}
+.card--rating__label--4, .card--rating__input--4 {
+    grid-area: four;
+}
+.card--rating__label--5, .card--rating__input--5 {
+    grid-area: five;
+}
+.card--rating__input {
+    appearance: none;
+    width: var(--CIRCLE-DIAMETER);
+    height: var(--CIRCLE-DIAMETER);
+    background-color: var(--CARD-COLOR);
+    border-radius: 50%;
+    transition: 0.2s all linear;   
+}
+.card--rating__input:checked {
+    background-color: var(--SELECTED-STATE-COLOR);
+}
+.card--rating__input:checked:hover {
+    border: 2px solid var(--ORANGE-HIGHLIGHT);
+}
+.card--rating__input:hover {
+    border: 20px solid var(--ORANGE-HIGHLIGHT);
+}
+
+/* -Button*/
+.card--rating__button {
+    width: 100%;
+    padding-top: 15px;
+    padding-bottom: 13px;
+    background-color: var(--ORANGE-HIGHLIGHT);
+    color: var(--WHITE-HIGHLIGHT);
+    border-radius: 30px;
+    text-transform: uppercase;
+    font-size: .89rem;
+    font-weight: 700;
+    font-family: 'Overpass', sans-serif;
+    letter-spacing: .1rem;
+    box-sizing: border-box;
+    margin-bottom: 8px;
+}
+.card--rating__button:hover {
+    cursor: pointer;
+    background-color: var(--WHITE-HIGHLIGHT);
+    transition: 0.2s all linear;
+    color: var(--ORANGE-HIGHLIGHT);
+}

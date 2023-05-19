@@ -3,58 +3,102 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
   
   <title>Frontend Mentor | Interactive rating component</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
 </head>
 <body>
 
   <main>
     <!-- Rating state start -->
-    <section>
-      <img src="images/icon-star.svg" alt="Icon star">
-      <h1>How did we do?</h1>
-      <p>Please let us know how we did with your support request. All feedback is appreciated to help us improve our offering!</p>
-      <form action="">
-        <div>
-          <label for="">1</label>
-          <input type="radio">
-        </div>
-        <div>
-          <label for="">2</label>
-          <input type="radio">
-        </div>
-        <div>
-          <label for="">3</label>
-          <input type="radio">
-        </div>
-        <div>
-          <label for="">4</label>
-          <input type="radio">
-        </div>
-        <div>
-          <label for="">5</label>
-          <input type="radio">
-        </div>
-        <button>Submit</button>
+    <section class="card card--rating">
+      <img 
+      src="images/icon-star.svg" 
+      alt="Star image"
+      class="card--rating__icon">
+      <h1 class="card__title card--rating__title">How did we do?</h1>
+      <p class="card__paragraph card--rating__paragraph">Please let us know how we did with your support request. All feedback is appreciated to help us improve our offering!</p>
+      <form 
+      action=""
+      class="card--rating__form">
+        <fieldset class="card--rating__options">
+          <div class="card--rating__option">
+            <label 
+            for="input-one"
+            class="
+            card--rating__label 
+            card--rating__label--1">1</label>
+            <input 
+            id="input-one" type="radio" name="rating"
+            class="
+            card--rating__input 
+            card--rating__input--1">
+          </div>
+          <div class="card--rating__option">
+            <label 
+            for="input-two"
+            class="
+            card--rating__label 
+            card--rating__label--2">2</label>
+            <input 
+            id="input-two" type="radio" name="rating" 
+            class="
+            card--rating__input 
+            card--rating__input--2">
+          </div>
+          <div class="card--rating__option">
+            <label 
+            for="input-three"
+            class="
+            card--rating__label 
+            card--rating__label--3">3</label>
+            <input 
+            id="input-three" type="radio" name="rating" 
+            class="
+            card--rating__input 
+            card--rating__input--3">
+          </div>
+          <div class="card--rating__option">
+            <label 
+            for="input-four"
+            class="
+            card--rating__label 
+            card--rating__label--4">4</label>
+            <input 
+            id="input-four" type="radio" name="rating" 
+            class="
+            card--rating__input 
+            card--rating__input--4">
+          </div>
+          <div class="card--rating__option">
+            <label
+            for="input-five"
+            class="
+            card--rating__label 
+            card--rating__label--5">5</label>
+            <input
+            id="input-five" type="radio" name="rating" 
+            class="
+            card--rating__input 
+            card--rating__input--5">
+          </div>
+        </fieldset>
+        
+        <button class="card--rating__button">Submit</button>
       </form>
     </section>
     <!-- Rating state end -->
 
     <!-- Thank you state start -->
-    <!-- <section>
+    <section class="card card--thank-you-state hidden">
       <img src="images/illustration-thank-you.svg" alt="Illustration thank you">
       <div>You selected <span></span> out of 5</div>
       <h2>Thank you!</h2>
       <p>We appreciate you taking the time to give a rating. If you ever need more support, don’t hesitate to get in touch!</p>
-    </section> -->
+    </section>
   <!-- Thank you state end -->
   </main>
   
