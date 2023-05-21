@@ -45,25 +45,21 @@ main {
     align-items: center;
     min-height: 100vh;
 }
-h1 {
-    color: var(--WHITE-HIGHLIGHT);
-}
-p {
-    color: var(--FONT-COLOR);
-}
+
 /*
     \\STANDALONE RULES
 */
 .hidden {
-    display: none;
+    display: none !important;
 }
-.color-white {
-    color: var(--WHITE-HIGHLIGHT);
+.white-color {
+    color: var(--WHITE-HIGHLIGHT) !important;
 }
 
 /*  
     \\ELEMENTS
 */
+/* \GENERAL ELEMENTS*/
 .card {
     height: 360px;
     width: 330px;
@@ -72,11 +68,22 @@ p {
         var(--CARD-COLOR), 
         var(--CARD-COLOR-DARKER) 90%);
     border-radius: 15px;
+    padding: 25px;
 }
+/* -Title*/
+.card__title  {
+    color: var(--WHITE-HIGHLIGHT);
+}
+/* -Paragraph*/
+.card__paragraph {
+    font-size: .885rem;
+    line-height: 1.5rem;    
+    color: var(--FONT-COLOR);
+}
+
 
 /* \CARD RATING */
 .card--rating {
-    padding: 25px;
     display: grid;
     align-content: space-between;
 }
@@ -88,12 +95,6 @@ p {
     padding: 12.5px;
     border-radius: 50%;
 }
-/* Paragraph*/
-.card--rating__paragraph {
-    font-size: .885rem;
-    line-height: 1.5rem;    
-}
-
 /* -Form */
 .card--rating__options {
     display: flex;
@@ -173,4 +174,23 @@ p {
     background-color: var(--WHITE-HIGHLIGHT);
     transition: 0.2s all linear;
     color: var(--ORANGE-HIGHLIGHT);
+}
+
+
+/* \CARD THANK YOU STATE */
+.card--thank-you-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+.card--thank-you-state__selection {
+    background-color: var(--CARD-COLOR);
+    padding: 5px 15px 3px 15px;
+    border-radius: 34px;
+    color: var(--ORANGE-HIGHLIGHT);
+    text-align: center;
+}
+.card--thank-you-state__paragraph {
+    text-align: center;
 }
