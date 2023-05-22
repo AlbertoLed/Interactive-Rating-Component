@@ -47,7 +47,7 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
+    min-height: calc(100vh - 40px);
 }
 
 /*
@@ -212,10 +212,32 @@ main {
     text-align: center;
 }
 
+/*  
+    \\ATTRIBUTION
+*/
+.attribution {
+    text-align: center;
+    background-color: var(--CARD-COLOR-DARKER);
+    color: var(--FONT-COLOR);
+}
+.attribution__anchor, 
+.attribution__anchor:visited  {
+    color: var(--ORANGE-HIGHLIGHT);
+}
+.attribution__anchor:hover{
+    color: var(--WHITE-HIGHLIGHT);
+}
 
 /*  
     \\ELEMENTS FOR TABLET AND DESKTOP VIEW
 */
+
+/* \CHANGES THE MAIN HEIGHT TO GET THE FOOTER JUST UNDERNEATH OF IT */
+@media (min-width: 423px) {
+    main {
+        min-height: calc(100vh - 20px);
+    }
+}
 
 @media (min-width: 490px) {
 
