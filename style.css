@@ -24,7 +24,11 @@
     --CARD-COLOR-DARKER: hsl(214, 26%, 12%);
     
 
-    --CIRCLE-DIAMETER: 40px;
+    --MIN-CIRCLE-DIAMETER: 40px;
+    --MAX-CIRCLE-DIAMETER: 50px;
+    --CIRCLE-DIAMETER: 9.5vw;
+    --CIRCLE-PADDING: 4.5%;
+    /* --CIRCLE-DIAMETER: 100%; */
 }
 
 /* 
@@ -61,14 +65,18 @@ main {
 */
 /* \GENERAL ELEMENTS*/
 .card {
-    height: 360px;
-    width: 330px;
+    min-height: 360px;
+    height: 87.2vw;
+    max-height: 420px;
+    width: 80vw;
+    min-width: 330px;
+    max-width: 415px;
     background: radial-gradient(
         circle at top,
         var(--CARD-COLOR), 
         var(--CARD-COLOR-DARKER) 90%);
     border-radius: 15px;
-    padding: 25px;
+    padding: min(34px, 7%);
 }
 /* -Title*/
 .card__title  {
@@ -90,9 +98,13 @@ main {
 /* -Star icon*/
 .card--rating__icon {
     background-color: var(--CARD-COLOR);
-    width: var(--CIRCLE-DIAMETER);
+    max-width: var(--MAX-CIRCLE-DIAMETER);
+    max-height: var(--MAX-CIRCLE-DIAMETER);
+    padding: var(--CIRCLE-PADDING);
     height: var(--CIRCLE-DIAMETER);
-    padding: 12.5px;
+    width: var(--CIRCLE-DIAMETER);
+    min-width: var(--MIN-CIRCLE-DIAMETER);
+    min-height: var(--MIN-CIRCLE-DIAMETER);
     border-radius: 50%;
 }
 /* -Form */
@@ -137,8 +149,12 @@ main {
 }
 .card--rating__input {
     appearance: none;
-    width: var(--CIRCLE-DIAMETER);
+    max-width: var(--MAX-CIRCLE-DIAMETER);
+    max-height: var(--MAX-CIRCLE-DIAMETER);
     height: var(--CIRCLE-DIAMETER);
+    width: var(--CIRCLE-DIAMETER);
+    min-width: var(--MIN-CIRCLE-DIAMETER);
+    min-height: var(--MIN-CIRCLE-DIAMETER);
     background-color: var(--CARD-COLOR);
     border-radius: 50%;
     transition: 0.2s all linear;   
@@ -147,10 +163,11 @@ main {
     background-color: var(--SELECTED-STATE-COLOR);
 }
 .card--rating__input:checked:hover {
+    background-color: var(--SELECTED-STATE-COLOR);
     border: 2px solid var(--ORANGE-HIGHLIGHT);
 }
 .card--rating__input:hover {
-    border: 20px solid var(--ORANGE-HIGHLIGHT);
+    background-color: var(--ORANGE-HIGHLIGHT);
 }
 
 /* -Button*/
@@ -193,4 +210,25 @@ main {
 }
 .card--thank-you-state__paragraph {
     text-align: center;
+}
+
+
+/*  
+    \\ELEMENTS FOR TABLET AND DESKTOP VIEW
+*/
+
+@media (min-width: 490px) {
+
+/* \GENERAL ELEMENTS*/
+    .card__title {
+        font-size: 1.8rem;
+    }
+    .card__paragraph {
+        font-size: .95rem;
+    }
+    .card--rating__label {
+        padding-top: calc(50% - .5rem);
+        font-size: 1rem;
+    }
+    
 }

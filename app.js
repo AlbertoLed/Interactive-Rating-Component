@@ -42,15 +42,18 @@ function removeColorWhite(target) {
 
 submitBtn.addEventListener('click', function(e) {
 
+    // Check all the radio inputs
     for(i = 0; i < 5; i++) {
         const option = ratingOptions.children[i];
 
-
+        // If ther is one radio input selected, then change of section.
         if(option.lastElementChild.checked) {
             e.preventDefault();
 
+            //Take the value of the radio input and send it to the thank you section
             document.querySelector('.card--thank-you-state__rate').textContent = option.firstElementChild.textContent;
             
+            //Change of section
             cardRating.classList.add('hidden');
             console.log(cardRating);
             cardThankYouState.classList.remove('hidden');
